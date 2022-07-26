@@ -921,10 +921,10 @@ class Browsershot
             return "NODE_PATH='{$this->nodeModulePath}'";
         }
         if ($this->npmBinary) {
-            return "NODE_PATH=`{$nodeBinary} {$this->npmBinary} root -g`";
+            return "NODE_PATH=`{$nodeBinary} {$this->npmBinary} root --location=global`";
         }
 
-        return 'NODE_PATH=`npm root -g`';
+        return 'NODE_PATH=`npm root --location=global`';
     }
 
     protected function getOptionsCommand(string $command): string
